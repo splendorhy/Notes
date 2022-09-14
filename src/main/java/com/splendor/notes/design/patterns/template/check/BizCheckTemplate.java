@@ -25,6 +25,7 @@ public abstract class BizCheckTemplate<P> {
      * @throws Exception 业务异常
      */
     public CheckResponse checkProcess(P param) {
+
         /*1.基础参数校验*/
         CheckResponse checkResponse = checkParam(param);
         if (!checkResponse.isPass()) {
