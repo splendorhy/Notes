@@ -26,7 +26,7 @@ public class OrderCpxService {
     private static Map<StrategyInfo, Class> processorRepository = Maps.newHashMap();
 
     static {
-        Reflections reflections = new Reflections("org.zyf.javabasic.designpatterns.strategy.complex");
+        Reflections reflections = new Reflections("com.splendor.notes.design.patterns.strategy.complex");
         Set<Class<?>> classSet = reflections.getTypesAnnotatedWith(OrderProcessorType.class);
         for (Class<?> cl : classSet) {
             Annotation[] annotations = cl.getAnnotations();
