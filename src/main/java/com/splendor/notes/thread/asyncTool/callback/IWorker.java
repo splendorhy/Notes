@@ -1,6 +1,6 @@
-package com.splendor.notes.thread.syncTool.callback;
+package com.splendor.notes.thread.asyncTool.callback;
 
-import com.splendor.notes.thread.syncTool.wrapper.WorkerWrapper;
+import com.splendor.notes.thread.asyncTool.wrapper.WorkerWrapper;
 
 import java.util.Map;
 

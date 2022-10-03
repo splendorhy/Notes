@@ -1,6 +1,6 @@
-package com.splendor.notes.thread.syncTool.worker;
+package com.splendor.notes.thread.asyncTool.worker;
 
-import com.splendor.notes.thread.syncTool.wrapper.WorkerWrapper;
+import com.splendor.notes.thread.asyncTool.wrapper.WorkerWrapper;
 
 /**
  * @author splendor.s

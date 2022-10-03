@@ -1,4 +1,4 @@
-package com.splendor.notes.thread.syncTool.exception;
+package com.splendor.notes.thread.asyncTool.exception;
 
 /**
  * @Author splendor.s

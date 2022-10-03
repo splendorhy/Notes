@@ -1,6 +1,6 @@
-package com.splendor.notes.thread.syncTool.callback;
+package com.splendor.notes.thread.asyncTool.callback;
 
-import com.splendor.notes.thread.syncTool.worker.WorkResult;
+import com.splendor.notes.thread.asyncTool.worker.WorkResult;
 
 /**
  * @author splendor.s

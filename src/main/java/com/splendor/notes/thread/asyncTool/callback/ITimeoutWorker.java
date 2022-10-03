@@ -1,4 +1,4 @@
-package com.splendor.notes.thread.syncTool.callback;
+package com.splendor.notes.thread.asyncTool.callback;
 
 /**
  * @author splendor.s

@@ -1,4 +1,4 @@
-package com.splendor.notes.thread.syncTool.worker;
+package com.splendor.notes.thread.asyncTool.worker;
 
 /**
  * @author splendor.s

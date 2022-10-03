@@ -1,4 +1,4 @@
-package com.splendor.notes.thread.syncTool.executor;
+package com.splendor.notes.thread.asyncTool.executor;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
