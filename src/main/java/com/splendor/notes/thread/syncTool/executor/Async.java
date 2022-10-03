@@ -12,6 +12,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 public class Async {
 
     /**
+     *
      * 默认不定长线程池
      */
     private static final ThreadPoolExecutor COMMON_POOL = (ThreadPoolExecutor) Executors.newCachedThreadPool();
