@@ -154,9 +154,7 @@ public class WorkerWrapper<T , V> {
             //有多个依赖时
             doDependsJobs(executorService, dependWrappers, fromWrapper, now, remainTime);
         }
-
     }
-
 
     public void work(ExecutorService executorService, long remainTime, Map<String, WorkerWrapper> forParamUseWrappers) {
         work(executorService, null, remainTime, forParamUseWrappers);
