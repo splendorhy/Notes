@@ -24,7 +24,7 @@ import javax.annotation.Resource;
 public class LockController {
 
     @Resource
-    RedissonLock redissonLock;
+    private RedissonLock redissonLock;
 
     /**
      * 模拟商品库存
