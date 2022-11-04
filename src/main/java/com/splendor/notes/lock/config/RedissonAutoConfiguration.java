@@ -1,8 +1,8 @@
 package com.splendor.notes.lock.config;
 
-import com.splendor.core.entity.RedissonProperties;
-import com.splendor.core.strategy.RedissonLock;
-import com.splendor.core.strategy.RedissonManager;
+import com.splendor.notes.lock.entity.RedissonProperties;
+import com.splendor.notes.lock.strategy.RedissonLock;
+import com.splendor.notes.lock.strategy.RedissonManager;
 import org.redisson.Redisson;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
