@@ -175,11 +175,11 @@
             <artifactId>tair3-client</artifactId>
             <version>3.1.9.4-mt</version>
         </dependency>
-        <dependency>
-            <groupId>com.sankuai.octo</groupId>
-            <artifactId>mns-invoker</artifactId>
-            <version>1.9.21-RC</version>
-        </dependency>-->
+         <dependency>
+             <groupId>com.sankuai.octo</groupId>
+             <artifactId>mns-invoker</artifactId>
+             <version>1.9.21-RC</version>
+         </dependency>-->
     </dependencies>
 
     <build>
