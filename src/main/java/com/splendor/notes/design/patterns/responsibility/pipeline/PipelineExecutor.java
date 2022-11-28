@@ -46,7 +46,8 @@ public class PipelineExecutor {
 
         for (Class<? extends ContextHandler<? extends PipelineContext, ?>> handler : pipeline) {
             try {
-                Class<?>[] classes = handler.getClasses();
+                //Class<?>[] classes = handler.getClasses();
+
 
 
                 //TODO 当前处理器处理数据，并返回是否继续向下处理
@@ -61,7 +62,6 @@ public class PipelineExecutor {
                 break;
             }
         }
-
         return lastSuccess;
     }
 }

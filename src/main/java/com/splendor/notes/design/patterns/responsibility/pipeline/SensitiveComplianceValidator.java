@@ -55,9 +55,9 @@ public class SensitiveComplianceValidator implements ContextHandler<SensitveHitC
      */
     private List<SensitiveWord> corporateCompliance(String content) {
         List<SensitiveWord> sensitiveWords = Lists.newArrayList();
-        if (content.contains("张彦峰企业词库")) {
+        if (content.contains("splendor企业词库")) {
             sensitiveWords.add(SensitiveWord.builder()
-                    .sensitive("张彦峰企业词库")
+                    .sensitive("splendor企业词库")
                     .sensitiveId(23L)
                     .kind(4).build());
         }
