@@ -4,6 +4,8 @@ import com.splendor.notes.design.ddd.domain.leave.entity.Leave;
 import com.splendor.notes.design.ddd.domain.leave.entity.valueobject.Approver;
 import com.splendor.notes.design.ddd.domain.leave.service.LeaveDomainService;
 import com.splendor.notes.design.ddd.domain.person.entity.Person;
+import com.splendor.notes.design.ddd.domain.person.service.PersonDomainService;
+import com.splendor.notes.design.ddd.domain.rule.service.ApprovalRuleDomainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 /**
