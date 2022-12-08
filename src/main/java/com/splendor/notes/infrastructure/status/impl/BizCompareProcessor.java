@@ -75,7 +75,7 @@ public class BizCompareProcessor extends AbstractProcessor {
         }
 
         */
-/*3.文件各行进行数据对比并进行记录*//*
+      /*3.文件各行进行数据对比并进行记录*//*
 
         try {
             String compareBizFile = "/Users/yanfengzhang/Downloads/" + value.getCompareTaskName() + "_" + value.getId() + "_业务比对数据.txt";
