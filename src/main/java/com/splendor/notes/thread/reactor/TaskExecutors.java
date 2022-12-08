@@ -23,7 +23,7 @@ public class TaskExecutors<ID,T> {
     TaskExecutors(WorkerRunnableFactory<ID, T> workerRunnableFactory, int workerCount, AtomicBoolean isShutdown){
         this.isShutdown = isShutdown;
         this.workerThreads = Lists.newArrayList();
-        ThreadGroup threadGroup = new ThreadGroup(ConsumerAssembly.DOCTOR_SCHDEDULE_THREAD_GROUP);
+        ThreadGroup threadGroup = new ThreadGroup(ConsumerAssembly.ACCEPTOR_THREAD_GROUP);
         for (int i = 0; i < workerCount; i++) {
             TaskExecutors.WorkerRunnable<ID, T> runnable = workerRunnableFactory.create(i);
             Thread workerThread = new Thread(threadGroup, runnable, runnable.getWorkerName());

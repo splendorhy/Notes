@@ -9,5 +9,5 @@ public class ConsumerAssembly {
 
     public final static Long MSG_DELAY_INTERVAL = 90L;
 
-    public static final String DOCTOR_SCHDEDULE_ACCEPTOR_THREAD_GROUP = "DOCTOR_SCHDEDULE_ACCEPTOR_THREAD_GROUP";
+    public static final String ACCEPTOR_THREAD_GROUP = "ACCEPTOR_THREAD_GROUP";
 }

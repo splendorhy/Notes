@@ -63,7 +63,7 @@ public class AcceptorExecutor<ID, T> {
         this.retrySleepTime = retrySleepTime;
         this.serverCongestionTime = serverCongestionTime;
         this.trafficShaper = new TrafficShaper(serverCongestionTime, retrySleepTime);
-        ThreadGroup threadGroup = new ThreadGroup(ConsumerAssembly.DOCTOR_SCHDEDULE_ACCEPTOR_THREAD_GROUP);
+        ThreadGroup threadGroup = new ThreadGroup(ConsumerAssembly.ACCEPTOR_THREAD_GROUP);
         this.acceptorThread = new Thread(threadGroup, new AcceptorExecutor.AcceptorRunner(), "TaskAcceptor-" + index);
         this.acceptorThread.setDaemon(true);
         this.acceptorThread.start();

@@ -26,6 +26,6 @@ public interface TaskProcessor<T> {
      * @param inquiryOrders
      * @return
      */
-    public ProcessingResult process(List<T> inquiryOrders);
+    ProcessingResult process(List<T> inquiryOrders);
 
 }
