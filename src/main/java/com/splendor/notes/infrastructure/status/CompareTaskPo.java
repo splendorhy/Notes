@@ -17,4 +17,12 @@ public class CompareTaskPo {
     private Integer id;
 
     private Integer lastPingTime;
+
+    private String compareResult;
+
+    private String noiseResult;
+
+    private  String compareTaskName;
+
+    private Integer replayTaskId;
 }

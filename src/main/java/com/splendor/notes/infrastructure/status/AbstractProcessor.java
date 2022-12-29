@@ -1,6 +1,6 @@
-/*
 package com.splendor.notes.infrastructure.status;
 
+import com.splendor.notes.infrastructure.status.service.CompareTaskMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -9,7 +9,7 @@ import java.lang.ref.WeakReference;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
-*/
+
 /**
  * @author splendor.s
  * @create 2022/11/29 上午11:26
@@ -19,7 +19,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 将提交的处理交由线程池管理。
  * 同时定义一个心跳关联到外部的Processor，当processor运行结束时，结束心跳。每个ping关联一个单独的ScheduledExecutorService，结束ping时直接shutdown线程池。
  * 每个processor在开始前需要有一定逻辑更新task的状态，否则可能导致任务被重复提交。
- *//*
+ */
 
 
 public abstract class AbstractProcessor implements Runnable {
@@ -47,12 +47,12 @@ public abstract class AbstractProcessor implements Runnable {
         this.value = value;
     }
 
-    */
-/**
+
+   /**
      * 心跳。
      * 关联到外部的Processor，当processor运行结束时，结束心跳。
      * 每个ping关联一个单独的ScheduledExecutorService，结束ping时直接shutdown线程池。
-     *//*
+     */
 
     class Ping implements Runnable {
 
@@ -63,14 +63,13 @@ public abstract class AbstractProcessor implements Runnable {
 
         Ping(AbstractProcessor processor) {
             weakReference = new WeakReference<>(processor, referenceQueue);
-            compareTaskMapper = BeanFactoryUtil.getBean(CompareTaskMapper.class);
+            //compareTaskMapper = BeanFactoryUtil.getBean(CompareTaskMapper.class);
+            compareTaskMapper = null;
         }
 
         void ping() {
             if (referenceQueue.poll() != null) {
-                */
-/*兜底：当其关联的processor被垃圾回收后，结束心跳*//*
-
+                /*兜底：当其关联的processor被垃圾回收后，结束心跳*/
                 LOGGER.warn("【任务处理心跳】compareTaskId：{}的心跳被动结束", value.getId());
                 scheduleAtFixedRate.shutdown();
             } else {
@@ -120,9 +119,7 @@ public abstract class AbstractProcessor implements Runnable {
     public final void run() {
         this.ping.start();
         try {
-            */
-/*实际状态下任务处理内容成功后进行状态流转*//*
-
+             /*实际状态下任务处理内容成功后进行状态流转*/
             if (actualProcess(value)) {
                 end(value);
             }
@@ -130,6 +127,4 @@ public abstract class AbstractProcessor implements Runnable {
             done();
         }
     }
-
 }
-*/

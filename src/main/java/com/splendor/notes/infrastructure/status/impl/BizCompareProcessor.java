@@ -1,20 +1,24 @@
-/*
 package com.splendor.notes.infrastructure.status.impl;
 
-import com.splendor.notes.infrastructure.status.AbstractProcessor;
-import com.splendor.notes.infrastructure.status.CompareCons;
-import com.splendor.notes.infrastructure.status.Status;
+import com.splendor.notes.infrastructure.status.*;
+import com.splendor.notes.infrastructure.status.service.BeanFactoryUtil;
+import com.splendor.notes.infrastructure.status.service.CompareTaskMapper;
+import com.splendor.notes.infrastructure.status.service.ReplayTaskApplicationService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang3.StringUtils;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Objects;
 
-*/
+
 /**
  * @author splendor.s
  * @create 2022/11/29 上午11:37
  * @description 业务数据比对处理
  * 主要功能：对本次业务代码改动和master代码进行对比来分析对应的内容处理变化统计，具体代码如下：
- *//*
+ */
 
 @Status(status = CompareCons.Status.BIZ_COMPARING)
 @Slf4j
@@ -31,8 +35,8 @@ public class BizCompareProcessor extends AbstractProcessor {
     public boolean actualProcess(CompareTaskPo value) {
         log.info("开启业务数据比对处理处理:当前处理id为{}", value.getId());
         CompareTaskPo compareTaskPo = compareTaskMapper.selectById(value.getId());
-        */
-/*1.根据回放任务id来查看对应回放记录中的数据信息*//*
+
+        /*1.根据回放任务id来查看对应回放记录中的数据信息*/
 
         if (Objects.isNull(compareTaskPo)) {
             log.error("开启业务数据比对处理处理异常:比对任务{}并不存在，请进行核对！", value.getId());
@@ -55,8 +59,8 @@ public class BizCompareProcessor extends AbstractProcessor {
 //        String featureBdfPath = "/Users/yanfengzhang/Downloads/replay_data_10.dat.fbdf.rpresult";
         String masterFirstBdfPath = replayDataResultValue.getMasterFirstBdfPath();
         String featureBdfPath = replayDataResultValue.getFeatureBdfPath();
-        */
-/*2.检查回放记录中master文件和dev文件对应的条数是否一致*//*
+
+        /*2.检查回放记录中master文件和dev文件对应的条数是否一致*/
 
         Long masterFirstBdfLines = null;
         Long featureBdfLines = null;
@@ -74,16 +78,17 @@ public class BizCompareProcessor extends AbstractProcessor {
             return false;
         }
 
-        */
-      /*3.文件各行进行数据对比并进行记录*//*
-
+        /*3.文件各行进行数据对比并进行记录*/
         try {
-            String compareBizFile = "/Users/yanfengzhang/Downloads/" + value.getCompareTaskName() + "_" + value.getId() + "_业务比对数据.txt";
+            //String compareBizFile = "/Users/yanfengzhang/Downloads/" + value.getCompareTaskName() + "_" + value.getId() + "_业务比对数据.txt";
+            String compareBizFile ="/Users/yanfengzhang/Downloads/测试.txt";
             for (int i = 1; i < masterFirstBdfLines + 1; i++) {
+               /*
                 String masterFirstBdfStr = FileUtils.readAppointedLineNumber(masterFirstBdfPath, i);
                 String featureBdfStr = FileUtils.readAppointedLineNumber(featureBdfPath, i);
                 JsonNode diffInfo = JsonDealUtils.getCompareJsonResult(masterFirstBdfStr, featureBdfStr);
                 FileUtils.writeContent(compareBizFile, diffInfo.toString());
+               */
             }
             compareTaskMapper.updateCompareResult(value.getId(), compareBizFile);
         } catch (Exception e) {
@@ -92,8 +97,7 @@ public class BizCompareProcessor extends AbstractProcessor {
             return false;
         }
 
-        */
-/*4.执行完毕无异常，进行状态变更*//*
+        /*4.执行完毕无异常，进行状态变更*/
 
         return true;
     }
@@ -101,11 +105,8 @@ public class BizCompareProcessor extends AbstractProcessor {
     @Override
     public void end(CompareTaskPo value) {
         log.info("开启业务数据比对处理处理完成，待更新状态:当前处理id为{}", value.getId());
-        */
-/*更新状态为"业务数据比对处理完成"*//*
-
+        /*更新状态为"业务数据比对处理完成"*/
         compareTaskMapper.updateStatus(value.getId(), CompareCons.Status.BIZ_COMPARED);
         log.info("开启业务数据比对处理处理完成:当前处理id为{}，状态已更新为{}", value.getId(), CompareCons.Status.BIZ_COMPARED);
     }
 }
-*/

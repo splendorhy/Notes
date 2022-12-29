@@ -1,4 +1,3 @@
-/*
 package com.splendor.notes.infrastructure.status;
 
 import com.google.common.collect.Maps;
@@ -12,14 +11,14 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-*/
+
 /**
  * @author splendor.s
  * @create 2022/11/29 上午11:40
  * @description 状态逻辑分发器
  * 我们针对以上任务处理器，对实际业务处理进行分析并将其转发到相关的处理器上进行自动化处理
  * 负责对task任务不同状态运行逻辑的分发。
- *//*
+ */
 
 public class EventDispatcher {
     private static Map<Integer, Class> status2Processor = Maps.newHashMap();
@@ -40,15 +39,15 @@ public class EventDispatcher {
         }
     }
 
-    */
-/**
+
+   /**
      * dispatch方法目前只有cronServer线程调用，
      * 但是为了防止出现多线程调用导致的curProcessors被并发修改问题，所以用synchronized同步
      *
      * @param status        当前任务状态
      * @param compareTaskPo 比对任务消息数据
      * @return
-     *//*
+     */
 
     public static synchronized boolean dispatch(int status, CompareTaskPo compareTaskPo) {
         AbstractProcessor processor = getInstance(status, compareTaskPo);
@@ -61,9 +60,7 @@ public class EventDispatcher {
     }
 
     private static AbstractProcessor getInstance(int status, CompareTaskPo compareTaskPo) {
-        */
-/*:主动清理一次*//*
-
+        /*:主动清理一次*/
         cleanDirty();
         if (containsStatus(status)) {
             try {
@@ -88,4 +85,3 @@ public class EventDispatcher {
         return curProcessors.size();
     }
 }
-*/
