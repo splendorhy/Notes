@@ -2,7 +2,7 @@ package com.splendor.notes.infrastructure.status.impl;
 
 import com.splendor.notes.infrastructure.status.AbstractProcessor;
 import com.splendor.notes.infrastructure.status.CompareCons;
-import com.splendor.notes.infrastructure.status.CompareTaskPo;
+import com.splendor.notes.infrastructure.status.service.CompareTaskPo;
 import com.splendor.notes.infrastructure.status.Status;
 import com.splendor.notes.infrastructure.status.service.BeanFactoryUtil;
 import com.splendor.notes.infrastructure.status.service.CompareTaskMapper;

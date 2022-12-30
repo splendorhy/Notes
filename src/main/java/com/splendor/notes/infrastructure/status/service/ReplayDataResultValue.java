@@ -1,4 +1,4 @@
-package com.splendor.notes.infrastructure.status;
+package com.splendor.notes.infrastructure.status.service;
 
 import lombok.Getter;
 import lombok.Setter;

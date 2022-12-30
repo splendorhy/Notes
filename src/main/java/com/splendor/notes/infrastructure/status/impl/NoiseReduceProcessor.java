@@ -1,9 +1,7 @@
 package com.splendor.notes.infrastructure.status.impl;
 
 import com.splendor.notes.infrastructure.status.*;
-import com.splendor.notes.infrastructure.status.service.BeanFactoryUtil;
-import com.splendor.notes.infrastructure.status.service.CompareTaskMapper;
-import com.splendor.notes.infrastructure.status.service.ReplayTaskApplicationService;
+import com.splendor.notes.infrastructure.status.service.*;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 

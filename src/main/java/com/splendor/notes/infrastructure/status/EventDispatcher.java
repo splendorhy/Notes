@@ -1,6 +1,7 @@
 package com.splendor.notes.infrastructure.status;
 
 import com.google.common.collect.Maps;
+import com.splendor.notes.infrastructure.status.service.CompareTaskPo;
 import org.reflections.Reflections;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -3,6 +3,7 @@ package com.splendor.notes.infrastructure.status.impl;
 import com.splendor.notes.infrastructure.status.*;
 import com.splendor.notes.infrastructure.status.service.BeanFactoryUtil;
 import com.splendor.notes.infrastructure.status.service.CompareTaskMapper;
+import com.splendor.notes.infrastructure.status.service.CompareTaskPo;
 import lombok.extern.slf4j.Slf4j;
 
 import java.nio.file.Files;

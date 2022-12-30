@@ -1,8 +1,5 @@
 package com.splendor.notes.infrastructure.status.service;
 
-import com.splendor.notes.infrastructure.status.CompareTaskPo;
-import io.swagger.models.auth.In;
-
 import java.util.List;
 
 /**

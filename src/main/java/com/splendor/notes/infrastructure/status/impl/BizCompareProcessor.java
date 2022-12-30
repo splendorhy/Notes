@@ -1,11 +1,8 @@
 package com.splendor.notes.infrastructure.status.impl;
 
 import com.splendor.notes.infrastructure.status.*;
-import com.splendor.notes.infrastructure.status.service.BeanFactoryUtil;
-import com.splendor.notes.infrastructure.status.service.CompareTaskMapper;
-import com.splendor.notes.infrastructure.status.service.ReplayTaskApplicationService;
+import com.splendor.notes.infrastructure.status.service.*;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import java.nio.file.Files;
@@ -80,8 +77,7 @@ public class BizCompareProcessor extends AbstractProcessor {
 
         /*3.文件各行进行数据对比并进行记录*/
         try {
-            //String compareBizFile = "/Users/yanfengzhang/Downloads/" + value.getCompareTaskName() + "_" + value.getId() + "_业务比对数据.txt";
-            String compareBizFile ="/Users/yanfengzhang/Downloads/测试.txt";
+            String compareBizFile = "/Users/yanfengzhang/Downloads/" + value.getCompareTaskName() + "_" + value.getId() + "_业务比对数据.txt";
             for (int i = 1; i < masterFirstBdfLines + 1; i++) {
                /*
                 String masterFirstBdfStr = FileUtils.readAppointedLineNumber(masterFirstBdfPath, i);
