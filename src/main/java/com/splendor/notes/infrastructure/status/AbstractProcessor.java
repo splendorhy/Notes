@@ -54,7 +54,6 @@ public abstract class AbstractProcessor implements Runnable {
      * 关联到外部的Processor，当processor运行结束时，结束心跳。
      * 每个ping关联一个单独的ScheduledExecutorService，结束ping时直接shutdown线程池。
      */
-
     class Ping implements Runnable {
 
         private WeakReference<AbstractProcessor> weakReference;

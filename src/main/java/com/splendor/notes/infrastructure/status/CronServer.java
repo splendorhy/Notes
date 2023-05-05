@@ -51,7 +51,6 @@ public class CronServer implements InitializingBean {
             int taskCount = EventDispatcher.getTaskCount();
 
            /*清理已经完成的任务*/
-
             EventDispatcher.cleanDirty();
             LOGGER.warn("[--------当前正在运行的任务数量为:{}-------]", EventDispatcher.getTaskCount());
             if (taskCount != 0 && EventDispatcher.getTaskCount() == 0) {
@@ -78,7 +77,6 @@ public class CronServer implements InitializingBean {
                      * （由于目前任务运行周期在多台服务器是一致的，所以极端情况下可能会出现任务被一台机器抢占的情况，
                      * 后续可以考虑使不同机器的运行周期随机或者引入分布式任务分配（负载均衡）策略）
                      */
-
                     if (compareTaskMapper.updateLastPingTimeByVersion(compareTaskPo.getId(), curSecond - 15, compareTaskPo.getVersion()) > 0) {
                         compareTaskPo.setVersion(compareTaskPo.getVersion() + 1);
                         compareTaskPo.setLastPingTime(curSecond - 15);

@@ -23,5 +23,4 @@ public class ApplicantAssembler {
         applicant.setPersonName(dto.getPersonName());
         return applicant;
     }
-
 }

@@ -25,5 +25,4 @@ public class ApprovalInfoAssembler {
         dto.setTime(approvalInfo.getTime());
         return dto;
     }
-
 }

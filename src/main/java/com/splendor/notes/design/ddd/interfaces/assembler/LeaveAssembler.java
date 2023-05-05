@@ -46,6 +46,4 @@ public class LeaveAssembler {
         leave.setHistoryApprovalInfos(historyApprovalInfoDTOList);
         return leave;
     }
-
-
 }

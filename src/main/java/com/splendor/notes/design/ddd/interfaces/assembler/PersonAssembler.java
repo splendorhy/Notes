@@ -36,5 +36,4 @@ public class PersonAssembler {
         person.setLastModifyTime(DateUtil.parseDateTime(dto.getLastModifyTime()));
         return person;
     }
-
 }

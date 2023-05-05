@@ -23,5 +23,4 @@ public class ApproverAssembler {
         approver.setPersonName(dto.getPersonName());
         return approver;
     }
-
 }

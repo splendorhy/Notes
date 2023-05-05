@@ -1,9 +1,12 @@
 package com.splendor.notes.infrastructure.status.impl;
 
-import com.splendor.notes.infrastructure.status.*;
+import com.splendor.notes.infrastructure.status.AbstractProcessor;
+import com.splendor.notes.infrastructure.status.CompareCons;
+import com.splendor.notes.infrastructure.status.Status;
 import com.splendor.notes.infrastructure.status.service.*;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -52,8 +55,6 @@ public class BizCompareProcessor extends AbstractProcessor {
             return false;
         }
 
-//        String masterFirstBdfPath = "/Users/yanfengzhang/Downloads/replay_data_10.dat.mfbdf.rpresult";
-//        String featureBdfPath = "/Users/yanfengzhang/Downloads/replay_data_10.dat.fbdf.rpresult";
         String masterFirstBdfPath = replayDataResultValue.getMasterFirstBdfPath();
         String featureBdfPath = replayDataResultValue.getFeatureBdfPath();
 
