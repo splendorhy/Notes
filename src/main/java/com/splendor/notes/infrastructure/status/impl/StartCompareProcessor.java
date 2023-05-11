@@ -53,14 +53,11 @@ public class StartCompareProcessor extends AbstractProcessor {
     public void end(CompareTaskPo value) {
         log.info("开启比对任务进行处理完成，待更新状态:当前处理id为{}", value.getId());
         try {
-
            /*更新状态为"降噪字段处理中"*/
-
             compareTaskMapper.updateStatus(value.getId(), CompareCons.Status.NOISE_REDUCING);
         } catch (Exception e) {
             log.info("开启比对任务进行处理完成异常异常异常异常:当前处理id为{}，状态已更新为{}", value.getId(), CompareCons.Status.NOISE_REDUCING);
         }
-
         log.info("开启比对任务进行处理完成:当前处理id为{}，状态已更新为{}", value.getId(), CompareCons.Status.NOISE_REDUCING);
     }
 }
