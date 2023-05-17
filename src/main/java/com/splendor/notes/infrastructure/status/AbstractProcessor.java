@@ -1,5 +1,6 @@
 package com.splendor.notes.infrastructure.status;
 
+import com.splendor.notes.infrastructure.status.service.BeanFactoryUtil;
 import com.splendor.notes.infrastructure.status.service.CompareTaskMapper;
 import com.splendor.notes.infrastructure.status.service.CompareTaskPo;
 import org.slf4j.Logger;
@@ -21,8 +22,6 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 同时定义一个心跳关联到外部的Processor，当processor运行结束时，结束心跳。每个ping关联一个单独的ScheduledExecutorService，结束ping时直接shutdown线程池。
  * 每个processor在开始前需要有一定逻辑更新task的状态，否则可能导致任务被重复提交。
  */
-
-
 public abstract class AbstractProcessor implements Runnable {
 
     private final Ping ping;
@@ -48,7 +47,6 @@ public abstract class AbstractProcessor implements Runnable {
         this.value = value;
     }
 
-
    /**
      * 心跳。
      * 关联到外部的Processor，当processor运行结束时，结束心跳。
@@ -63,8 +61,7 @@ public abstract class AbstractProcessor implements Runnable {
 
         Ping(AbstractProcessor processor) {
             weakReference = new WeakReference<>(processor, referenceQueue);
-            //compareTaskMapper = BeanFactoryUtil.getBean(CompareTaskMapper.class);
-            compareTaskMapper = null;
+            compareTaskMapper = BeanFactoryUtil.getBean(CompareTaskMapper.class);
         }
 
         void ping() {
@@ -75,7 +72,7 @@ public abstract class AbstractProcessor implements Runnable {
             } else {
                 try {
                     int curTime = (int) (System.currentTimeMillis() / 1000);
-                    compareTaskMapper.updateLastPingTime(value.getId(), curTime);
+                    //compareTaskMapper.updateLastPingTime(value.getId(), curTime);
                     LOGGER.warn("【任务处理心跳】compareTaskId：{}心跳正常，当前时间:{} processor:{}", value.getId(), curTime, weakReference.get());
                 } catch (Exception e) {
                     LOGGER.error("【任务处理心跳】compareTaskId：{}心跳时间更新异常，exception：", value.getId(), e);

@@ -58,7 +58,7 @@ public class NoiseReduceProcessor extends AbstractProcessor {
         String masterFirstBdfPath = replayDataResultValue.getMasterFirstBdfPath();
         String masterSecondBdfPath = replayDataResultValue.getMasterSecondBdfPath();
 
-     /*2.检查回放记录中两次master文件对应的条数是否一致*/
+      /*2.检查回放记录中两次master文件对应的条数是否一致*/
 
         Long masterFirstBdfLines = null;
         Long masterSecondBdfLines = null;
